@@ -8,11 +8,11 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Industrial IoT
-  - Predictive Maintenance
-  - Machine Learning
-  - Equipment Monitoring
   - AWS
+  - Equipment Monitoring
+  - Industrial IoT
+  - Machine Learning
+  - Predictive Maintenance
 url: >-
   https://raw.githubusercontent.com/api-evangelist/amazon-monitron/refs/heads/main/apis.yml
 created: '2026-03-16'
@@ -29,8 +29,8 @@ apis:
     baseURL: https://monitron.amazonaws.com
     tags:
       - Industrial IoT
-      - Predictive Maintenance
       - Machine Learning
+      - Predictive Maintenance
     properties:
       - type: Documentation
         url: https://docs.aws.amazon.com/monitron/latest/monitron-api/API_Reference.html
