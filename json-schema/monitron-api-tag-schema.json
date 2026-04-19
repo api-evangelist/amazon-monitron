@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-monitron/refs/heads/main/json-schema/monitron-api-tag-schema.json",
+  "title": "Tag",
+  "description": "A tag for a Monitron resource.",
+  "type": "object",
+  "properties": {
+    "key": {
+      "description": "Tag key.",
+      "type": "string"
+    },
+    "value": {
+      "description": "Tag value.",
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,125 @@
+vocabulary: 1.0.0
+info:
+  provider: Amazon Monitron
+  description: Unified vocabulary for Amazon Monitron APIs and capabilities.
+  created: '2026-04-19'
+  modified: '2026-04-19'
+operational:
+  apis:
+  - name: Amazon Monitron API
+    namespace: monitron
+    version: '2018-11-14'
+    baseUrl: https://monitron.us-east-1.amazonaws.com
+    status: active
+  resources:
+  - name: projects
+    api: Amazon Monitron API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: admins
+    api: Amazon Monitron API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  - name: tags
+    api: Amazon Monitron API
+    actions:
+    - list
+    - get
+    - create
+    - update
+    - delete
+  actions:
+  - name: list
+    httpMethod: GET
+    pattern: read
+  - name: get
+    httpMethod: GET
+    pattern: read
+  - name: create
+    httpMethod: POST
+    pattern: write
+  - name: update
+    httpMethod: PUT
+    pattern: write
+  - name: delete
+    httpMethod: DELETE
+    pattern: write
+  schemas:
+    core:
+    - CreateProjectRequest
+    - ListProjectsResponse
+    - Project
+    - Tag
+  parameters:
+    pagination:
+    - name: nextToken
+      description: Pagination token
+    - name: maxResults
+      description: Max results per page
+  authentication:
+    schemes:
+    - type: awsSigV4
+      description: AWS Signature Version 4
+capability:
+  workflows:
+  - name: Amazon Monitron Workflow
+    file: capabilities/amazon-monitron-media-workflow.yaml
+    description: Amazon Monitron media processing workflow
+    personas:
+    - Broadcast Engineer
+    - Media Developer
+    domains:
+    - Media Processing
+  personas:
+  - id: broadcast-engineer
+    name: Broadcast Engineer
+    description: Engineer managing broadcast media workflows
+    workflows:
+    - Amazon Monitron Workflow
+  - id: media-developer
+    name: Media Developer
+    description: Developer building media processing applications
+    workflows:
+    - Amazon Monitron Workflow
+  domains:
+  - name: Media Processing
+    description: AWS media processing and delivery
+  namespaces:
+  - name: monitron
+    type: consumed
+  - name: monitron-workflow-api
+    type: rest
+    port: 8080
+  - name: monitron-workflow-mcp
+    type: mcp
+    port: 9090
+  binds:
+  - name: AWS_ACCESS_KEY_ID
+  - name: AWS_SECRET_ACCESS_KEY
+crossReference:
+- resource: projects
+  api: Amazon Monitron API
+  workflows:
+  - Amazon Monitron Workflow
+  personas:
+  - Broadcast Engineer
+- resource: admins
+  api: Amazon Monitron API
+  workflows:
+  - Amazon Monitron Workflow
+  personas:
+  - Broadcast Engineer
+- resource: tags
+  api: Amazon Monitron API
+  workflows:
+  - Amazon Monitron Workflow
+  personas:
+  - Broadcast Engineer

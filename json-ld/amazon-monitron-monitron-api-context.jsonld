@@ -1,0 +1,56 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "pan": "https://pan.dev/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "Tag": "pan:Tag",
+    "Project": "pan:Project",
+    "CreateProjectRequest": "pan:CreateProjectRequest",
+    "ListProjectsResponse": "pan:ListProjectsResponse",
+    "key": {
+      "@id": "pan:key",
+      "@type": "xsd:string"
+    },
+    "value": {
+      "@id": "pan:value",
+      "@type": "xsd:string"
+    },
+    "createdAt": "schema:dateCreated",
+    "projectArn": {
+      "@id": "pan:project_arn",
+      "@type": "xsd:string"
+    },
+    "projectName": {
+      "@id": "pan:project_name",
+      "@type": "xsd:string"
+    },
+    "status": {
+      "@id": "pan:status",
+      "@type": "xsd:string"
+    },
+    "updatedAt": "schema:dateModified",
+    "clientToken": {
+      "@id": "pan:client_token",
+      "@type": "xsd:string"
+    },
+    "kmsKeyId": {
+      "@id": "pan:kms_key_id",
+      "@type": "xsd:string"
+    },
+    "tags": {
+      "@id": "pan:tags",
+      "@type": "@id"
+    },
+    "items": {
+      "@id": "pan:items",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "nextToken": {
+      "@id": "pan:next_token",
+      "@type": "xsd:string"
+    }
+  }
+}

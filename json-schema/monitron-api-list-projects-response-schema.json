@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-monitron/refs/heads/main/json-schema/monitron-api-list-projects-response-schema.json",
+  "title": "ListProjectsResponse",
+  "description": "ListProjectsResponse schema from Amazon Monitron API",
+  "type": "object",
+  "properties": {
+    "items": {
+      "description": "A list of Monitron projects.",
+      "items": {
+        "$ref": "#/components/schemas/Project"
+      },
+      "type": "array"
+    },
+    "nextToken": {
+      "description": "A pagination token to retrieve the next set of results.",
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "createdAt": "2025-03-15T14:30:00Z",
+  "projectArn": "arn:aws:service:us-east-1:123456789012:resource/example",
+  "projectName": "example-resource",
+  "status": "DELETING",
+  "updatedAt": "2025-03-15T14:30:00Z"
+}

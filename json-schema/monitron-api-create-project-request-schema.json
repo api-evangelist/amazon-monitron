@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-monitron/refs/heads/main/json-schema/monitron-api-create-project-request-schema.json",
+  "title": "CreateProjectRequest",
+  "description": "CreateProjectRequest schema from Amazon Monitron API",
+  "type": "object",
+  "properties": {
+    "clientToken": {
+      "description": "A unique case-sensitive identifier used to idempotently create a resource.",
+      "type": "string"
+    },
+    "kmsKeyId": {
+      "description": "The ID of the AWS Key Management Service (KMS) key to use to encrypt your project data.",
+      "type": "string"
+    },
+    "projectName": {
+      "description": "The name of the project.",
+      "type": "string"
+    },
+    "tags": {
+      "description": "Resource tags to add to the project.",
+      "type": "object"
+    }
+  },
+  "required": [
+    "projectName"
+  ]
+}

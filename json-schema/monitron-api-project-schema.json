@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-monitron/refs/heads/main/json-schema/monitron-api-project-schema.json",
+  "title": "Project",
+  "description": "Represents a Monitron project.",
+  "type": "object",
+  "properties": {
+    "createdAt": {
+      "description": "The time at which the project was created.",
+      "format": "date-time",
+      "type": "string"
+    },
+    "projectArn": {
+      "description": "The Amazon Resource Name (ARN) of the project.",
+      "type": "string"
+    },
+    "projectName": {
+      "description": "The name of the project.",
+      "type": "string"
+    },
+    "status": {
+      "description": "The current status of the project.",
+      "enum": [
+        "ACTIVE",
+        "DELETING"
+      ],
+      "type": "string"
+    },
+    "updatedAt": {
+      "description": "The time at which the project was last updated.",
+      "format": "date-time",
+      "type": "string"
+    }
+  }
+}

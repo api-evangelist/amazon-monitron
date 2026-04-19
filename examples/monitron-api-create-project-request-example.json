@@ -1,0 +1,6 @@
+{
+  "clientToken": "example-value",
+  "kmsKeyId": "id-abc123",
+  "projectName": "example-resource",
+  "tags": {}
+}

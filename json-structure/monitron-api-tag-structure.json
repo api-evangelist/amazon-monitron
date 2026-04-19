@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-monitron/refs/heads/main/json-structure/monitron-api-tag-structure.json",
+  "name": "Tag",
+  "type": "object",
+  "description": "A tag for a Monitron resource.",
+  "properties": {
+    "key": {
+      "type": "string",
+      "description": "Tag key."
+    },
+    "value": {
+      "type": "string",
+      "description": "Tag value."
+    }
+  }
+}
