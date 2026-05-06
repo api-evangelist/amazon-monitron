@@ -1,4 +1,4 @@
-naftiko: 1.0.0-alpha1
+naftiko: 1.0.0-alpha2
 info:
   label: Amazon Monitron Workflow
   description: Workflow capability for Amazon Monitron media processing operations for broadcast engineers and media developers.
@@ -8,7 +8,7 @@ info:
   - Broadcasting
   - Workflow
   created: '2026-04-19'
-  modified: '2026-04-19'
+  modified: '2026-05-06'
 binds:
 - namespace: env
   keys:
@@ -17,8 +17,224 @@ binds:
     AWS_REGION: AWS_REGION
 capability:
   consumes:
-  - import: monitron
-    location: ./shared/monitron.yaml
+  - type: http
+    namespace: monitron
+    baseUri: https://monitron.us-east-1.amazonaws.com
+    description: Amazon Monitron REST API
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{AWS_ACCESS_KEY_ID}}'
+      placement: header
+    resources:
+    - name: default
+      path: /
+      description: Amazon Monitron resources
+      operations:
+      - name: list-projects
+        method: GET
+        description: Amazon Monitron List Projects
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maxResults
+          in: query
+          type: integer
+          required: false
+          description: The maximum number of results to return.
+        - name: nextToken
+          in: query
+          type: string
+          required: false
+          description: A pagination token.
+      - name: create-project
+        method: POST
+        description: Amazon Monitron Create Project
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: get-project
+        method: GET
+        description: Amazon Monitron Get Project
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectName
+          in: path
+          type: string
+          required: true
+          description: The name of the project.
+      - name: update-project
+        method: PATCH
+        description: Amazon Monitron Update Project
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectName
+          in: path
+          type: string
+          required: true
+          description: The name of the project.
+        body:
+          type: json
+          data: {}
+      - name: delete-project
+        method: DELETE
+        description: Amazon Monitron Delete Project
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectName
+          in: path
+          type: string
+          required: true
+          description: The name of the project.
+      - name: list-project-admin-users
+        method: GET
+        description: Amazon Monitron List Project Admin Users
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectName
+          in: path
+          type: string
+          required: true
+          description: The name of the project.
+        - name: maxResults
+          in: query
+          type: integer
+          required: false
+          description: Max results.
+        - name: nextToken
+          in: query
+          type: string
+          required: false
+          description: Pagination token.
+      - name: associate-project-admin-user
+        method: POST
+        description: Amazon Monitron Associate Project Admin User
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectName
+          in: path
+          type: string
+          required: true
+          description: The name of the project.
+        body:
+          type: json
+          data: {}
+      - name: get-project-admin-user
+        method: GET
+        description: Amazon Monitron Get Project Admin User
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectName
+          in: path
+          type: string
+          required: true
+          description: The name of the project.
+        - name: userArn
+          in: path
+          type: string
+          required: true
+          description: The ARN of the user.
+      - name: disassociate-project-admin-user
+        method: DELETE
+        description: Amazon Monitron Disassociate Project Admin User
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectName
+          in: path
+          type: string
+          required: true
+          description: The name of the project.
+        - name: userArn
+          in: path
+          type: string
+          required: true
+          description: The ARN of the user.
+      - name: list-tags-for-resource
+        method: GET
+        description: Amazon Monitron List Tags for Resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceArn
+          in: path
+          type: string
+          required: true
+          description: The ARN of the resource.
+      - name: tag-resource
+        method: POST
+        description: Amazon Monitron Tag Resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceArn
+          in: path
+          type: string
+          required: true
+          description: The ARN of the resource.
+        body:
+          type: json
+          data: {}
+      - name: untag-resource
+        method: DELETE
+        description: Amazon Monitron Untag Resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceArn
+          in: path
+          type: string
+          required: true
+          description: The ARN of the resource.
+        - name: tagKeys
+          in: query
+          type: array
+          required: true
+          description: Tag keys to remove.
   exposes:
   - type: rest
     port: 8080
