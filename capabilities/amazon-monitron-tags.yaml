@@ -1,0 +1,166 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Amazon Monitron — Tags
+  description: 'Amazon Monitron — Tags. 3 operations. Lead operation: Amazon Monitron Untag Resource. Self-contained Naftiko
+    capability covering one Amazon Monitron business surface.'
+  tags:
+  - Amazon Monitron
+  - Tags
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AMAZON_MONITRON_API_KEY: AMAZON_MONITRON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: amazon-monitron-tags
+    baseUri: https://monitron.us-east-1.amazonaws.com
+    description: Amazon Monitron — Tags business capability. Self-contained, no shared references.
+    resources:
+    - name: tags-resourceArn
+      path: /tags/{resourceArn}
+      operations:
+      - name: untagresource
+        method: DELETE
+        description: Amazon Monitron Untag Resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceArn
+          in: path
+          type: string
+          description: The ARN of the resource.
+          required: true
+        - name: tagKeys
+          in: query
+          type: array
+          description: Tag keys to remove.
+          required: true
+      - name: listtagsforresource
+        method: GET
+        description: Amazon Monitron List Tags for Resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceArn
+          in: path
+          type: string
+          description: The ARN of the resource.
+          required: true
+      - name: tagresource
+        method: POST
+        description: Amazon Monitron Tag Resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceArn
+          in: path
+          type: string
+          description: The ARN of the resource.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.AMAZON_MONITRON_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: amazon-monitron-tags-rest
+    port: 8080
+    description: REST adapter for Amazon Monitron — Tags. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/tags/{resourcearn}
+      name: tags-resourcearn
+      description: REST surface for tags-resourceArn.
+      operations:
+      - method: DELETE
+        name: untagresource
+        description: Amazon Monitron Untag Resource
+        call: amazon-monitron-tags.untagresource
+        with:
+          resourceArn: rest.resourceArn
+          tagKeys: rest.tagKeys
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: listtagsforresource
+        description: Amazon Monitron List Tags for Resource
+        call: amazon-monitron-tags.listtagsforresource
+        with:
+          resourceArn: rest.resourceArn
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: tagresource
+        description: Amazon Monitron Tag Resource
+        call: amazon-monitron-tags.tagresource
+        with:
+          resourceArn: rest.resourceArn
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: amazon-monitron-tags-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Amazon Monitron — Tags. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: amazon-monitron-untag-resource
+      description: Amazon Monitron Untag Resource
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: amazon-monitron-tags.untagresource
+      with:
+        resourceArn: tools.resourceArn
+        tagKeys: tools.tagKeys
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-monitron-list-tags-resource
+      description: Amazon Monitron List Tags for Resource
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-monitron-tags.listtagsforresource
+      with:
+        resourceArn: tools.resourceArn
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-monitron-tag-resource
+      description: Amazon Monitron Tag Resource
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-monitron-tags.tagresource
+      with:
+        resourceArn: tools.resourceArn
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,227 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Amazon Monitron — ProjectAdmins
+  description: 'Amazon Monitron — ProjectAdmins. 4 operations. Lead operation: Amazon Monitron List Project Admin Users. Self-contained
+    Naftiko capability covering one Amazon Monitron business surface.'
+  tags:
+  - Amazon Monitron
+  - ProjectAdmins
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AMAZON_MONITRON_API_KEY: AMAZON_MONITRON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: amazon-monitron-projectadmins
+    baseUri: https://monitron.us-east-1.amazonaws.com
+    description: Amazon Monitron — ProjectAdmins business capability. Self-contained, no shared references.
+    resources:
+    - name: projects-projectName-admins
+      path: /projects/{projectName}/admins
+      operations:
+      - name: listprojectadminusers
+        method: GET
+        description: Amazon Monitron List Project Admin Users
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectName
+          in: path
+          type: string
+          description: The name of the project.
+          required: true
+        - name: maxResults
+          in: query
+          type: integer
+          description: Max results.
+        - name: nextToken
+          in: query
+          type: string
+          description: Pagination token.
+      - name: associateprojectadminuser
+        method: POST
+        description: Amazon Monitron Associate Project Admin User
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectName
+          in: path
+          type: string
+          description: The name of the project.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: projects-projectName-admins-userArn
+      path: /projects/{projectName}/admins/{userArn}
+      operations:
+      - name: disassociateprojectadminuser
+        method: DELETE
+        description: Amazon Monitron Disassociate Project Admin User
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectName
+          in: path
+          type: string
+          description: The name of the project.
+          required: true
+        - name: userArn
+          in: path
+          type: string
+          description: The ARN of the user.
+          required: true
+      - name: getprojectadminuser
+        method: GET
+        description: Amazon Monitron Get Project Admin User
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectName
+          in: path
+          type: string
+          description: The name of the project.
+          required: true
+        - name: userArn
+          in: path
+          type: string
+          description: The ARN of the user.
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.AMAZON_MONITRON_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: amazon-monitron-projectadmins-rest
+    port: 8080
+    description: REST adapter for Amazon Monitron — ProjectAdmins. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/projects/{projectname}/admins
+      name: projects-projectname-admins
+      description: REST surface for projects-projectName-admins.
+      operations:
+      - method: GET
+        name: listprojectadminusers
+        description: Amazon Monitron List Project Admin Users
+        call: amazon-monitron-projectadmins.listprojectadminusers
+        with:
+          projectName: rest.projectName
+          maxResults: rest.maxResults
+          nextToken: rest.nextToken
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: associateprojectadminuser
+        description: Amazon Monitron Associate Project Admin User
+        call: amazon-monitron-projectadmins.associateprojectadminuser
+        with:
+          projectName: rest.projectName
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/projects/{projectname}/admins/{userarn}
+      name: projects-projectname-admins-userarn
+      description: REST surface for projects-projectName-admins-userArn.
+      operations:
+      - method: DELETE
+        name: disassociateprojectadminuser
+        description: Amazon Monitron Disassociate Project Admin User
+        call: amazon-monitron-projectadmins.disassociateprojectadminuser
+        with:
+          projectName: rest.projectName
+          userArn: rest.userArn
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: getprojectadminuser
+        description: Amazon Monitron Get Project Admin User
+        call: amazon-monitron-projectadmins.getprojectadminuser
+        with:
+          projectName: rest.projectName
+          userArn: rest.userArn
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: amazon-monitron-projectadmins-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Amazon Monitron — ProjectAdmins. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: amazon-monitron-list-project-admin
+      description: Amazon Monitron List Project Admin Users
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-monitron-projectadmins.listprojectadminusers
+      with:
+        projectName: tools.projectName
+        maxResults: tools.maxResults
+        nextToken: tools.nextToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-monitron-associate-project-admin
+      description: Amazon Monitron Associate Project Admin User
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-monitron-projectadmins.associateprojectadminuser
+      with:
+        projectName: tools.projectName
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-monitron-disassociate-project-admin
+      description: Amazon Monitron Disassociate Project Admin User
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: amazon-monitron-projectadmins.disassociateprojectadminuser
+      with:
+        projectName: tools.projectName
+        userArn: tools.userArn
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-monitron-get-project-admin
+      description: Amazon Monitron Get Project Admin User
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-monitron-projectadmins.getprojectadminuser
+      with:
+        projectName: tools.projectName
+        userArn: tools.userArn
+      outputParameters:
+      - type: object
+        mapping: $.

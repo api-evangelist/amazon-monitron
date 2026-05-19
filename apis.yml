@@ -1,7 +1,8 @@
 aid: amazon-monitron
 name: Amazon Monitron
-description: Amazon Monitron is an end-to-end system that uses machine learning to detect abnormal behavior in industrial machinery. It includes sensors, a gateway, and the Monitron mobile app to 
-  enable predictive maintenance and reduce unplanned downtime.
+description: Amazon Monitron is an end-to-end system that uses machine learning to detect abnormal behavior in industrial
+  machinery. It includes sensors, a gateway, and the Monitron mobile app to enable predictive maintenance and reduce unplanned
+  downtime.
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
@@ -11,13 +12,14 @@ tags:
 - Media
 url: https://raw.githubusercontent.com/api-evangelist/amazon-monitron/refs/heads/main/apis.yml
 created: '2026-03-16'
-modified: '2026-04-19'
+modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
 - aid: amazon-monitron:monitron-api
   name: Amazon Monitron API
-  description: Amazon Monitron is an end-to-end system that uses machine learning to detect abnormal behavior in industrial machinery. It includes sensors, a gateway, and the Monitron mobile app to 
-    enable predictive maintenance and reduce unplanned downtime.
+  description: Amazon Monitron is an end-to-end system that uses machine learning to detect abnormal behavior in industrial
+    machinery. It includes sensors, a gateway, and the Monitron mobile app to enable predictive maintenance and reduce unplanned
+    downtime.
   humanURL: https://aws.amazon.com/monitron/
   baseURL: https://monitron.us-east-1.amazonaws.com
   tags:
@@ -35,6 +37,12 @@ apis:
     url: https://aws.amazon.com/monitron/pricing/
   - type: FAQ
     url: https://aws.amazon.com/monitron/faqs/
+  - type: NaftikoCapability
+    url: capabilities/amazon-monitron-projectadmins.yaml
+  - type: NaftikoCapability
+    url: capabilities/amazon-monitron-projects.yaml
+  - type: NaftikoCapability
+    url: capabilities/amazon-monitron-tags.yaml
 common:
 - type: Portal
   url: https://aws.amazon.com/monitron/
@@ -62,8 +70,6 @@ common:
   url: rules/amazon-monitron-spectral-rules.yml
 - type: Vocabulary
   url: vocabulary/amazon-monitron-vocabulary.yaml
-- type: NaftikoCapability
-  url: capabilities/amazon-monitron-media-workflow.yaml
 - type: Features
   data:
   - name: ML-Based Anomaly Detection
