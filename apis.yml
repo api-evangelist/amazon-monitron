@@ -4,7 +4,7 @@ description: Amazon Monitron is an end-to-end system that uses machine learning 
   machinery. It includes sensors, a gateway, and the Monitron mobile app to enable predictive maintenance and reduce unplanned
   downtime.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - AWS
 - Broadcasting
