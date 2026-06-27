@@ -37,11 +37,11 @@ apis:
     url: https://aws.amazon.com/monitron/pricing/
   - type: FAQ
     url: https://aws.amazon.com/monitron/faqs/
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/amazon-monitron-projectadmins.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/amazon-monitron-projects.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/amazon-monitron-tags.yaml
 common:
 - type: Portal
@@ -60,7 +60,7 @@ common:
   url: https://github.com/aws
 - type: Console
   url: https://console.aws.amazon.com/monitron/
-- type: SignUp
+- type: Signup
   url: https://portal.aws.amazon.com/billing/signup
 - type: StatusPage
   url: https://health.aws.amazon.com/health/status
