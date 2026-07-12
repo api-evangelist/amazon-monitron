@@ -44,6 +44,14 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/amazon-monitron-tags.yaml
 common:
+- type: TrustCenter
+  url: security/amazon-monitron-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/amazon-monitron-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/amazon-monitron-domain-security.yml
+- type: Authentication
+  url: authentication/amazon-monitron-authentication.yml
 - type: Portal
   url: https://aws.amazon.com/monitron/
 - type: Documentation
