@@ -1,0 +1,141 @@
+openapi: 3.0.3
+info:
+  description: Amazon Monitron is an end-to-end system that uses machine learning to detect abnormal behavior in industrial machinery, enabling predictive maintenance.
+  title: Amazon Monitron ProjectAdmins API
+  version: '2020-10-01'
+  x-generated-from: documentation
+  x-last-validated: '2026-04-19'
+servers:
+- description: Amazon Monitron API endpoint
+  url: https://monitron.us-east-1.amazonaws.com
+security:
+- awsSigV4: []
+tags:
+- name: ProjectAdmins
+paths:
+  /projects/{projectName}/admins:
+    get:
+      description: Lists all project admins for a Monitron project.
+      operationId: ListProjectAdminUsers
+      parameters:
+      - description: The name of the project.
+        in: path
+        name: projectName
+        required: true
+        schema:
+          type: string
+      - description: Max results.
+        in: query
+        name: maxResults
+        schema:
+          type: integer
+      - description: Pagination token.
+        in: query
+        name: nextToken
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+              examples:
+                ListProjectAdminUsers200Example:
+                  summary: Default ListProjectAdminUsers 200 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+          description: Success
+      summary: Amazon Monitron List Project Admin Users
+      tags:
+      - ProjectAdmins
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    post:
+      description: Associate an administrator to a Monitron project.
+      operationId: AssociateProjectAdminUser
+      parameters:
+      - description: The name of the project.
+        in: path
+        name: projectName
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                userArn:
+                  type: string
+              type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+      summary: Amazon Monitron Associate Project Admin User
+      tags:
+      - ProjectAdmins
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /projects/{projectName}/admins/{userArn}:
+    delete:
+      description: Removes a Monitron project admin.
+      operationId: DisassociateProjectAdminUser
+      parameters:
+      - description: The name of the project.
+        in: path
+        name: projectName
+        required: true
+        schema:
+          type: string
+      - description: The ARN of the user.
+        in: path
+        name: userArn
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+      summary: Amazon Monitron Disassociate Project Admin User
+      tags:
+      - ProjectAdmins
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    get:
+      description: Gets a Monitron project administrator.
+      operationId: GetProjectAdminUser
+      parameters:
+      - description: The name of the project.
+        in: path
+        name: projectName
+        required: true
+        schema:
+          type: string
+      - description: The ARN of the user.
+        in: path
+        name: userArn
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+      summary: Amazon Monitron Get Project Admin User
+      tags:
+      - ProjectAdmins
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  securitySchemes:
+    awsSigV4:
+      description: AWS Signature Version 4
+      in: header
+      name: Authorization
+      type: apiKey

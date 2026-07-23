@@ -1,0 +1,97 @@
+openapi: 3.0.3
+info:
+  description: Amazon Monitron is an end-to-end system that uses machine learning to detect abnormal behavior in industrial machinery, enabling predictive maintenance.
+  title: Amazon Monitron ProjectAdmins Tags API
+  version: '2020-10-01'
+  x-generated-from: documentation
+  x-last-validated: '2026-04-19'
+servers:
+- description: Amazon Monitron API endpoint
+  url: https://monitron.us-east-1.amazonaws.com
+security:
+- awsSigV4: []
+tags:
+- name: Tags
+paths:
+  /tags/{resourceArn}:
+    delete:
+      description: Removes tags from a Monitron resource.
+      operationId: UntagResource
+      parameters:
+      - description: The ARN of the resource.
+        in: path
+        name: resourceArn
+        required: true
+        schema:
+          type: string
+      - description: Tag keys to remove.
+        in: query
+        name: tagKeys
+        required: true
+        schema:
+          items:
+            type: string
+          type: array
+      responses:
+        '200':
+          description: Success
+      summary: Amazon Monitron Untag Resource
+      tags:
+      - Tags
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    get:
+      description: Lists the tags for a Monitron resource.
+      operationId: ListTagsForResource
+      parameters:
+      - description: The ARN of the resource.
+        in: path
+        name: resourceArn
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+      summary: Amazon Monitron List Tags for Resource
+      tags:
+      - Tags
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    post:
+      description: Adds tags to a Monitron resource.
+      operationId: TagResource
+      parameters:
+      - description: The ARN of the resource.
+        in: path
+        name: resourceArn
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                tags:
+                  type: object
+              type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+      summary: Amazon Monitron Tag Resource
+      tags:
+      - Tags
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  securitySchemes:
+    awsSigV4:
+      description: AWS Signature Version 4
+      in: header
+      name: Authorization
+      type: apiKey
