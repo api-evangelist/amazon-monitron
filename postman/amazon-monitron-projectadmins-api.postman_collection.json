@@ -1,0 +1,469 @@
+{
+  "info": {
+    "_postman_id": "cba13d2b-14a9-424c-ad34-f65c66d387f9",
+    "name": "Amazon Monitron ProjectAdmins API",
+    "description": "Amazon Monitron is an end-to-end system that uses machine learning to detect abnormal behavior in industrial machinery, enabling predictive maintenance.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T00:50:21.000Z",
+    "updatedAt": "2026-07-28T00:50:21.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-cba13d2b-14a9-424c-ad34-f65c66d387f9"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{projectName}",
+          "item": [
+            {
+              "name": "admins",
+              "item": [
+                {
+                  "name": "{userArn}",
+                  "item": [
+                    {
+                      "name": "Amazon Monitron Disassociate Project Admin User",
+                      "id": "2eb3dc00-2907-46eb-a813-81a8e48ddb1c",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/projects/:projectName/admins/:userArn",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "projects",
+                            ":projectName",
+                            "admins",
+                            ":userArn"
+                          ],
+                          "variable": [
+                            {
+                              "id": "0dfeaf79-962d-47d0-a28d-0139933c5833",
+                              "key": "projectName",
+                              "value": "<string>",
+                              "description": "(Required) The name of the project."
+                            },
+                            {
+                              "id": "54d998a7-619e-4e4b-b906-6a21d4be5c24",
+                              "key": "userArn",
+                              "value": "<string>",
+                              "description": "(Required) The ARN of the user."
+                            }
+                          ]
+                        },
+                        "description": "Removes a Monitron project admin."
+                      },
+                      "response": [
+                        {
+                          "id": "a5359264-d311-4bf8-b77c-2369227c7417",
+                          "name": "Success",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:projectName/admins/:userArn",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":projectName",
+                                "admins",
+                                ":userArn"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "projectName"
+                                },
+                                {
+                                  "key": "userArn"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T00:50:21.000Z",
+                          "updatedAt": "2026-07-28T00:50:21.000Z",
+                          "uid": "35240-a5359264-d311-4bf8-b77c-2369227c7417"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T00:50:21.000Z",
+                      "updatedAt": "2026-07-28T00:50:21.000Z",
+                      "uid": "35240-2eb3dc00-2907-46eb-a813-81a8e48ddb1c"
+                    },
+                    {
+                      "name": "Amazon Monitron Get Project Admin User",
+                      "id": "a92770e2-4830-4df8-a9ad-15e7b52e85fb",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/projects/:projectName/admins/:userArn",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "projects",
+                            ":projectName",
+                            "admins",
+                            ":userArn"
+                          ],
+                          "variable": [
+                            {
+                              "id": "be0515cd-3299-452f-b812-7b31b9a90a11",
+                              "key": "projectName",
+                              "value": "<string>",
+                              "description": "(Required) The name of the project."
+                            },
+                            {
+                              "id": "b750c173-9f61-46ef-ac2e-8403898d45f1",
+                              "key": "userArn",
+                              "value": "<string>",
+                              "description": "(Required) The ARN of the user."
+                            }
+                          ]
+                        },
+                        "description": "Gets a Monitron project administrator."
+                      },
+                      "response": [
+                        {
+                          "id": "6e07955a-72ec-4960-bb7f-5b1e61336822",
+                          "name": "Success",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:projectName/admins/:userArn",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":projectName",
+                                "admins",
+                                ":userArn"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "projectName"
+                                },
+                                {
+                                  "key": "userArn"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T00:50:21.000Z",
+                          "updatedAt": "2026-07-28T00:50:21.000Z",
+                          "uid": "35240-6e07955a-72ec-4960-bb7f-5b1e61336822"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T00:50:21.000Z",
+                      "updatedAt": "2026-07-28T00:50:21.000Z",
+                      "uid": "35240-a92770e2-4830-4df8-a9ad-15e7b52e85fb"
+                    }
+                  ],
+                  "id": "d6bb303f-9998-4c93-a605-97480f2e8a73",
+                  "createdAt": "2026-07-28T00:50:21.000Z",
+                  "updatedAt": "2026-07-28T00:50:21.000Z",
+                  "uid": "35240-d6bb303f-9998-4c93-a605-97480f2e8a73"
+                },
+                {
+                  "name": "Amazon Monitron List Project Admin Users",
+                  "id": "6fd515e6-9c77-4392-8a43-c962e00f56e5",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/projects/:projectName/admins?maxResults=<integer>&nextToken=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "projects",
+                        ":projectName",
+                        "admins"
+                      ],
+                      "query": [
+                        {
+                          "description": "Max results.",
+                          "key": "maxResults",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "Pagination token.",
+                          "key": "nextToken",
+                          "value": "<string>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "c63ce880-2922-441c-a7b5-afe32d140738",
+                          "key": "projectName",
+                          "value": "<string>",
+                          "description": "(Required) The name of the project."
+                        }
+                      ]
+                    },
+                    "description": "Lists all project admins for a Monitron project."
+                  },
+                  "response": [
+                    {
+                      "id": "4f04333b-c906-4658-84af-5d79da000b69",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/projects/:projectName/admins?maxResults=<integer>&nextToken=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "projects",
+                            ":projectName",
+                            "admins"
+                          ],
+                          "query": [
+                            {
+                              "description": "Max results.",
+                              "key": "maxResults",
+                              "value": "<integer>"
+                            },
+                            {
+                              "description": "Pagination token.",
+                              "key": "nextToken",
+                              "value": "<string>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "projectName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T00:50:21.000Z",
+                      "updatedAt": "2026-07-28T00:50:21.000Z",
+                      "uid": "35240-4f04333b-c906-4658-84af-5d79da000b69"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T00:50:21.000Z",
+                  "updatedAt": "2026-07-28T00:50:21.000Z",
+                  "uid": "35240-6fd515e6-9c77-4392-8a43-c962e00f56e5"
+                },
+                {
+                  "name": "Amazon Monitron Associate Project Admin User",
+                  "id": "dc00ac9a-95c1-4736-831c-bb324bb01a94",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"userArn\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/projects/:projectName/admins",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "projects",
+                        ":projectName",
+                        "admins"
+                      ],
+                      "variable": [
+                        {
+                          "id": "1baf18a9-83dc-476c-b69b-aa38fa498205",
+                          "key": "projectName",
+                          "value": "<string>",
+                          "description": "(Required) The name of the project."
+                        }
+                      ]
+                    },
+                    "description": "Associate an administrator to a Monitron project."
+                  },
+                  "response": [
+                    {
+                      "id": "222d159d-2518-4ed1-b9f3-6b296c1449d0",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"userArn\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/projects/:projectName/admins",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "projects",
+                            ":projectName",
+                            "admins"
+                          ],
+                          "variable": [
+                            {
+                              "key": "projectName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T00:50:21.000Z",
+                      "updatedAt": "2026-07-28T00:50:21.000Z",
+                      "uid": "35240-222d159d-2518-4ed1-b9f3-6b296c1449d0"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T00:50:21.000Z",
+                  "updatedAt": "2026-07-28T00:50:21.000Z",
+                  "uid": "35240-dc00ac9a-95c1-4736-831c-bb324bb01a94"
+                }
+              ],
+              "id": "ae60a761-a566-46c4-b176-7f282ee5379f",
+              "createdAt": "2026-07-28T00:50:21.000Z",
+              "updatedAt": "2026-07-28T00:50:21.000Z",
+              "uid": "35240-ae60a761-a566-46c4-b176-7f282ee5379f"
+            }
+          ],
+          "id": "5f4acaf4-6814-4656-ad6f-8162d296bf6f",
+          "createdAt": "2026-07-28T00:50:21.000Z",
+          "updatedAt": "2026-07-28T00:50:21.000Z",
+          "uid": "35240-5f4acaf4-6814-4656-ad6f-8162d296bf6f"
+        }
+      ],
+      "id": "14139cf7-8467-4f1e-af97-2f5c9f8943c2",
+      "createdAt": "2026-07-28T00:50:21.000Z",
+      "updatedAt": "2026-07-28T00:50:21.000Z",
+      "uid": "35240-14139cf7-8467-4f1e-af97-2f5c9f8943c2"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://monitron.us-east-1.amazonaws.com"
+    }
+  ]
+}

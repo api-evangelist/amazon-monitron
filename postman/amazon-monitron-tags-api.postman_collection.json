@@ -1,0 +1,328 @@
+{
+  "info": {
+    "_postman_id": "669b7c55-5134-48a8-bfe1-95573a9287b3",
+    "name": "Amazon Monitron ProjectAdmins Tags API",
+    "description": "Amazon Monitron is an end-to-end system that uses machine learning to detect abnormal behavior in industrial machinery, enabling predictive maintenance.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T00:50:22.000Z",
+    "updatedAt": "2026-07-28T00:50:23.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-669b7c55-5134-48a8-bfe1-95573a9287b3"
+  },
+  "item": [
+    {
+      "name": "tags",
+      "item": [
+        {
+          "name": "{resourceArn}",
+          "item": [
+            {
+              "name": "Amazon Monitron Untag Resource",
+              "id": "67755211-7068-4bc3-b030-7b0b9d2fdaf3",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/tags/:resourceArn?tagKeys=<string>&tagKeys=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "tags",
+                    ":resourceArn"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Tag keys to remove.",
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) Tag keys to remove.",
+                      "key": "tagKeys",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "c646b5c6-b0fb-4673-9019-1a9ad06a9485",
+                      "key": "resourceArn",
+                      "value": "<string>",
+                      "description": "(Required) The ARN of the resource."
+                    }
+                  ]
+                },
+                "description": "Removes tags from a Monitron resource."
+              },
+              "response": [
+                {
+                  "id": "69beb328-db04-433b-b218-9e12278093c1",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/tags/:resourceArn?tagKeys=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "tags",
+                        ":resourceArn"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Tag keys to remove.",
+                          "key": "tagKeys",
+                          "value": "<string>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "resourceArn"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T00:50:23.000Z",
+                  "updatedAt": "2026-07-28T00:50:23.000Z",
+                  "uid": "35240-69beb328-db04-433b-b218-9e12278093c1"
+                }
+              ],
+              "createdAt": "2026-07-28T00:50:23.000Z",
+              "updatedAt": "2026-07-28T00:50:23.000Z",
+              "uid": "35240-67755211-7068-4bc3-b030-7b0b9d2fdaf3"
+            },
+            {
+              "name": "Amazon Monitron List Tags for Resource",
+              "id": "ab4b6b59-46b5-4f67-b7ae-1cc237edde70",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/tags/:resourceArn",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "tags",
+                    ":resourceArn"
+                  ],
+                  "variable": [
+                    {
+                      "id": "77348433-5285-4806-96a8-97597cda967b",
+                      "key": "resourceArn",
+                      "value": "<string>",
+                      "description": "(Required) The ARN of the resource."
+                    }
+                  ]
+                },
+                "description": "Lists the tags for a Monitron resource."
+              },
+              "response": [
+                {
+                  "id": "a3a0acc9-162c-4c61-ba9f-f8f4d43dea87",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/tags/:resourceArn",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "tags",
+                        ":resourceArn"
+                      ],
+                      "variable": [
+                        {
+                          "key": "resourceArn"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T00:50:23.000Z",
+                  "updatedAt": "2026-07-28T00:50:23.000Z",
+                  "uid": "35240-a3a0acc9-162c-4c61-ba9f-f8f4d43dea87"
+                }
+              ],
+              "createdAt": "2026-07-28T00:50:23.000Z",
+              "updatedAt": "2026-07-28T00:50:23.000Z",
+              "uid": "35240-ab4b6b59-46b5-4f67-b7ae-1cc237edde70"
+            },
+            {
+              "name": "Amazon Monitron Tag Resource",
+              "id": "c3bf55e8-0b73-4285-b97b-a9431dbe0e70",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"tags\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/tags/:resourceArn",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "tags",
+                    ":resourceArn"
+                  ],
+                  "variable": [
+                    {
+                      "id": "7a1de255-1c53-4ae7-b9fb-d813f41cf9ed",
+                      "key": "resourceArn",
+                      "value": "<string>",
+                      "description": "(Required) The ARN of the resource."
+                    }
+                  ]
+                },
+                "description": "Adds tags to a Monitron resource."
+              },
+              "response": [
+                {
+                  "id": "3efa69df-f1f4-412f-895d-c4258571b5a1",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"tags\": {}\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/tags/:resourceArn",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "tags",
+                        ":resourceArn"
+                      ],
+                      "variable": [
+                        {
+                          "key": "resourceArn"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T00:50:23.000Z",
+                  "updatedAt": "2026-07-28T00:50:23.000Z",
+                  "uid": "35240-3efa69df-f1f4-412f-895d-c4258571b5a1"
+                }
+              ],
+              "createdAt": "2026-07-28T00:50:23.000Z",
+              "updatedAt": "2026-07-28T00:50:23.000Z",
+              "uid": "35240-c3bf55e8-0b73-4285-b97b-a9431dbe0e70"
+            }
+          ],
+          "id": "d18b47fc-b510-4209-852a-22d08b2da180",
+          "createdAt": "2026-07-28T00:50:23.000Z",
+          "updatedAt": "2026-07-28T00:50:23.000Z",
+          "uid": "35240-d18b47fc-b510-4209-852a-22d08b2da180"
+        }
+      ],
+      "id": "470cd2b5-15c3-41d3-b118-02f26a9bf824",
+      "createdAt": "2026-07-28T00:50:23.000Z",
+      "updatedAt": "2026-07-28T00:50:23.000Z",
+      "uid": "35240-470cd2b5-15c3-41d3-b118-02f26a9bf824"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://monitron.us-east-1.amazonaws.com"
+    }
+  ]
+}

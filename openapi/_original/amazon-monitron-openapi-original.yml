@@ -1,0 +1,455 @@
+components:
+  schemas:
+    CreateProjectRequest:
+      properties:
+        clientToken:
+          description: A unique case-sensitive identifier used to idempotently create a resource.
+          type: string
+        kmsKeyId:
+          description: The ID of the AWS Key Management Service (KMS) key to use to encrypt your project data.
+          type: string
+        projectName:
+          description: The name of the project.
+          type: string
+        tags:
+          description: Resource tags to add to the project.
+          type: object
+      required:
+      - projectName
+      type: object
+    ListProjectsResponse:
+      properties:
+        items:
+          description: A list of Monitron projects.
+          items:
+            $ref: '#/components/schemas/Project'
+          type: array
+        nextToken:
+          description: A pagination token to retrieve the next set of results.
+          type: string
+      type: object
+    Project:
+      description: Represents a Monitron project.
+      properties:
+        createdAt:
+          description: The time at which the project was created.
+          format: date-time
+          type: string
+        projectArn:
+          description: The Amazon Resource Name (ARN) of the project.
+          type: string
+        projectName:
+          description: The name of the project.
+          type: string
+        status:
+          description: The current status of the project.
+          enum:
+          - ACTIVE
+          - DELETING
+          type: string
+        updatedAt:
+          description: The time at which the project was last updated.
+          format: date-time
+          type: string
+      type: object
+    Tag:
+      description: A tag for a Monitron resource.
+      properties:
+        key:
+          description: Tag key.
+          type: string
+        value:
+          description: Tag value.
+          type: string
+      type: object
+  securitySchemes:
+    awsSigV4:
+      description: AWS Signature Version 4
+      in: header
+      name: Authorization
+      type: apiKey
+info:
+  description: Amazon Monitron is an end-to-end system that uses machine learning to detect abnormal behavior in industrial machinery, enabling predictive maintenance.
+  title: Amazon Monitron
+  version: '2020-10-01'
+  x-generated-from: documentation
+  x-last-validated: '2026-04-19'
+openapi: 3.0.3
+paths:
+  /projects:
+    get:
+      description: Lists all available Monitron projects for the current AWS account.
+      operationId: ListProjects
+      parameters:
+      - description: The maximum number of results to return.
+        in: query
+        name: maxResults
+        schema:
+          type: integer
+      - description: A pagination token.
+        in: query
+        name: nextToken
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListProjectsResponse'
+              examples:
+                ListProjects200Example:
+                  summary: Default ListProjects 200 response
+                  x-microcks-default: true
+                  value:
+                    items: []
+                    nextToken: example-value
+          description: Success
+        '400':
+          description: Bad Request
+        '403':
+          description: Forbidden
+        '500':
+          description: Internal Server Error
+      summary: Amazon Monitron List Projects
+      tags:
+      - Projects
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    post:
+      description: Creates a Monitron project.
+      operationId: CreateProject
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateProjectRequest'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Project'
+              examples:
+                CreateProject200Example:
+                  summary: Default CreateProject 200 response
+                  x-microcks-default: true
+                  value:
+                    createdAt: '2025-03-15T14:30:00Z'
+                    projectArn: arn:aws:service:us-east-1:123456789012:resource/example
+                    projectName: example-resource
+                    status: ACTIVE
+                    updatedAt: '2025-03-15T14:30:00Z'
+          description: Success
+        '400':
+          description: Bad Request
+        '409':
+          description: Conflict
+      summary: Amazon Monitron Create Project
+      tags:
+      - Projects
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /projects/{projectName}:
+    delete:
+      description: Deletes a Monitron project.
+      operationId: DeleteProject
+      parameters:
+      - description: The name of the project.
+        in: path
+        name: projectName
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+        '404':
+          description: Not Found
+      summary: Amazon Monitron Delete Project
+      tags:
+      - Projects
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    get:
+      description: Gets information about a Monitron project.
+      operationId: GetProject
+      parameters:
+      - description: The name of the project.
+        in: path
+        name: projectName
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Project'
+              examples:
+                GetProject200Example:
+                  summary: Default GetProject 200 response
+                  x-microcks-default: true
+                  value:
+                    createdAt: '2025-03-15T14:30:00Z'
+                    projectArn: arn:aws:service:us-east-1:123456789012:resource/example
+                    projectName: example-resource
+                    status: ACTIVE
+                    updatedAt: '2025-03-15T14:30:00Z'
+          description: Success
+        '404':
+          description: Not Found
+      summary: Amazon Monitron Get Project
+      tags:
+      - Projects
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    patch:
+      description: Updates a Monitron project.
+      operationId: UpdateProject
+      parameters:
+      - description: The name of the project.
+        in: path
+        name: projectName
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                kmsKeyId:
+                  type: string
+              type: object
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Project'
+              examples:
+                UpdateProject200Example:
+                  summary: Default UpdateProject 200 response
+                  x-microcks-default: true
+                  value:
+                    createdAt: '2025-03-15T14:30:00Z'
+                    projectArn: arn:aws:service:us-east-1:123456789012:resource/example
+                    projectName: example-resource
+                    status: ACTIVE
+                    updatedAt: '2025-03-15T14:30:00Z'
+          description: Success
+        '404':
+          description: Not Found
+      summary: Amazon Monitron Update Project
+      tags:
+      - Projects
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /projects/{projectName}/admins:
+    get:
+      description: Lists all project admins for a Monitron project.
+      operationId: ListProjectAdminUsers
+      parameters:
+      - description: The name of the project.
+        in: path
+        name: projectName
+        required: true
+        schema:
+          type: string
+      - description: Max results.
+        in: query
+        name: maxResults
+        schema:
+          type: integer
+      - description: Pagination token.
+        in: query
+        name: nextToken
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+              examples:
+                ListProjectAdminUsers200Example:
+                  summary: Default ListProjectAdminUsers 200 response
+                  x-microcks-default: true
+                  value:
+                    result: success
+          description: Success
+      summary: Amazon Monitron List Project Admin Users
+      tags:
+      - ProjectAdmins
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    post:
+      description: Associate an administrator to a Monitron project.
+      operationId: AssociateProjectAdminUser
+      parameters:
+      - description: The name of the project.
+        in: path
+        name: projectName
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                userArn:
+                  type: string
+              type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+      summary: Amazon Monitron Associate Project Admin User
+      tags:
+      - ProjectAdmins
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /projects/{projectName}/admins/{userArn}:
+    delete:
+      description: Removes a Monitron project admin.
+      operationId: DisassociateProjectAdminUser
+      parameters:
+      - description: The name of the project.
+        in: path
+        name: projectName
+        required: true
+        schema:
+          type: string
+      - description: The ARN of the user.
+        in: path
+        name: userArn
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+      summary: Amazon Monitron Disassociate Project Admin User
+      tags:
+      - ProjectAdmins
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    get:
+      description: Gets a Monitron project administrator.
+      operationId: GetProjectAdminUser
+      parameters:
+      - description: The name of the project.
+        in: path
+        name: projectName
+        required: true
+        schema:
+          type: string
+      - description: The ARN of the user.
+        in: path
+        name: userArn
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+      summary: Amazon Monitron Get Project Admin User
+      tags:
+      - ProjectAdmins
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /tags/{resourceArn}:
+    delete:
+      description: Removes tags from a Monitron resource.
+      operationId: UntagResource
+      parameters:
+      - description: The ARN of the resource.
+        in: path
+        name: resourceArn
+        required: true
+        schema:
+          type: string
+      - description: Tag keys to remove.
+        in: query
+        name: tagKeys
+        required: true
+        schema:
+          items:
+            type: string
+          type: array
+      responses:
+        '200':
+          description: Success
+      summary: Amazon Monitron Untag Resource
+      tags:
+      - Tags
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    get:
+      description: Lists the tags for a Monitron resource.
+      operationId: ListTagsForResource
+      parameters:
+      - description: The ARN of the resource.
+        in: path
+        name: resourceArn
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+      summary: Amazon Monitron List Tags for Resource
+      tags:
+      - Tags
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    post:
+      description: Adds tags to a Monitron resource.
+      operationId: TagResource
+      parameters:
+      - description: The ARN of the resource.
+        in: path
+        name: resourceArn
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                tags:
+                  type: object
+              type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+      summary: Amazon Monitron Tag Resource
+      tags:
+      - Tags
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+security:
+- awsSigV4: []
+servers:
+- description: Amazon Monitron API endpoint
+  url: https://monitron.us-east-1.amazonaws.com
