@@ -46,12 +46,6 @@ apis:
     url: https://aws.amazon.com/monitron/pricing/
   - type: FAQ
     url: https://aws.amazon.com/monitron/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-monitron-projectadmins.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-monitron-projects.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-monitron-tags.yaml
 - aid: amazon-monitron:amazon-monitron-projects-api
   name: Amazon Monitron Projects API
   description: The Projects API from Amazon Monitron — 2 operation(s) for projects.
@@ -70,12 +64,6 @@ apis:
     url: https://aws.amazon.com/monitron/pricing/
   - type: FAQ
     url: https://aws.amazon.com/monitron/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-monitron-projectadmins.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-monitron-projects.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-monitron-tags.yaml
 - aid: amazon-monitron:amazon-monitron-tags-api
   name: Amazon Monitron Tags API
   description: The Tags API from Amazon Monitron — 1 operation(s) for tags.
@@ -94,12 +82,6 @@ apis:
     url: https://aws.amazon.com/monitron/pricing/
   - type: FAQ
     url: https://aws.amazon.com/monitron/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-monitron-projectadmins.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-monitron-projects.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-monitron-tags.yaml
 common:
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/amazon-monitron/overview
