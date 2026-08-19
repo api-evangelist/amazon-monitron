@@ -1,0 +1,130 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon Monitron ProjectAdmins API",
+    "version": "2020-10-01"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ProjectAdmins",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Monitron List Project Admin Users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://monitron.us-east-1.amazonaws.com/projects/:projectName/admins",
+            "params": [
+              {
+                "name": "projectName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the project."
+              },
+              {
+                "name": "maxResults",
+                "value": "",
+                "type": "query",
+                "description": "Max results."
+              },
+              {
+                "name": "nextToken",
+                "value": "",
+                "type": "query",
+                "description": "Pagination token."
+              }
+            ]
+          },
+          "docs": "Lists all project admins for a Monitron project."
+        },
+        {
+          "info": {
+            "name": "Amazon Monitron Associate Project Admin User",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://monitron.us-east-1.amazonaws.com/projects/:projectName/admins",
+            "params": [
+              {
+                "name": "projectName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the project."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Associate an administrator to a Monitron project."
+        },
+        {
+          "info": {
+            "name": "Amazon Monitron Get Project Admin User",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://monitron.us-east-1.amazonaws.com/projects/:projectName/admins/:userArn",
+            "params": [
+              {
+                "name": "projectName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the project."
+              },
+              {
+                "name": "userArn",
+                "value": "",
+                "type": "path",
+                "description": "The ARN of the user."
+              }
+            ]
+          },
+          "docs": "Gets a Monitron project administrator."
+        },
+        {
+          "info": {
+            "name": "Amazon Monitron Disassociate Project Admin User",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://monitron.us-east-1.amazonaws.com/projects/:projectName/admins/:userArn",
+            "params": [
+              {
+                "name": "projectName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the project."
+              },
+              {
+                "name": "userArn",
+                "value": "",
+                "type": "path",
+                "description": "The ARN of the user."
+              }
+            ]
+          },
+          "docs": "Removes a Monitron project admin."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

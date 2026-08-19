@@ -1,0 +1,127 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon Monitron ProjectAdmins Projects API",
+    "version": "2020-10-01"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Projects",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Monitron List Projects",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://monitron.us-east-1.amazonaws.com/projects",
+            "params": [
+              {
+                "name": "maxResults",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of results to return."
+              },
+              {
+                "name": "nextToken",
+                "value": "",
+                "type": "query",
+                "description": "A pagination token."
+              }
+            ]
+          },
+          "docs": "Lists all available Monitron projects for the current AWS account."
+        },
+        {
+          "info": {
+            "name": "Amazon Monitron Create Project",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://monitron.us-east-1.amazonaws.com/projects",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a Monitron project."
+        },
+        {
+          "info": {
+            "name": "Amazon Monitron Get Project",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://monitron.us-east-1.amazonaws.com/projects/:projectName",
+            "params": [
+              {
+                "name": "projectName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the project."
+              }
+            ]
+          },
+          "docs": "Gets information about a Monitron project."
+        },
+        {
+          "info": {
+            "name": "Amazon Monitron Update Project",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://monitron.us-east-1.amazonaws.com/projects/:projectName",
+            "params": [
+              {
+                "name": "projectName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the project."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a Monitron project."
+        },
+        {
+          "info": {
+            "name": "Amazon Monitron Delete Project",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://monitron.us-east-1.amazonaws.com/projects/:projectName",
+            "params": [
+              {
+                "name": "projectName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the project."
+              }
+            ]
+          },
+          "docs": "Deletes a Monitron project."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
