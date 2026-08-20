@@ -52,6 +52,8 @@ apis:
   humanURL: https://aws.amazon.com/monitron/
   baseURL: https://monitron.us-east-1.amazonaws.com
   tags:
+  - Project
+  tags_raw:
   - Projects
   properties:
   - type: OpenAPI
