@@ -4,6 +4,18 @@ description: Amazon Monitron is an end-to-end system that uses machine learning 
   machinery. It includes sensors, a gateway, and the Monitron mobile app to enable predictive maintenance and reduce unplanned
   downtime.
 type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
