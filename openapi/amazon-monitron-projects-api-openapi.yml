@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   description: Amazon Monitron is an end-to-end system that uses machine learning to detect abnormal behavior in industrial machinery, enabling predictive maintenance.
   title: Amazon Monitron ProjectAdmins Projects API
@@ -193,16 +193,22 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    ListProjectsResponse:
+    CreateProjectRequest:
       properties:
-        items:
-          description: A list of Monitron projects.
-          items:
-            $ref: '#/components/schemas/Project'
-          type: array
-        nextToken:
-          description: A pagination token to retrieve the next set of results.
+        clientToken:
+          description: A unique case-sensitive identifier used to idempotently create a resource.
           type: string
+        kmsKeyId:
+          description: The ID of the AWS Key Management Service (KMS) key to use to encrypt your project data.
+          type: string
+        projectName:
+          description: The name of the project.
+          type: string
+        tags:
+          description: Resource tags to add to the project.
+          type: object
+      required:
+      - projectName
       type: object
     Project:
       description: Represents a Monitron project.
@@ -228,22 +234,16 @@ components:
           format: date-time
           type: string
       type: object
-    CreateProjectRequest:
+    ListProjectsResponse:
       properties:
-        clientToken:
-          description: A unique case-sensitive identifier used to idempotently create a resource.
+        items:
+          description: A list of Monitron projects.
+          items:
+            $ref: '#/components/schemas/Project'
+          type: array
+        nextToken:
+          description: A pagination token to retrieve the next set of results.
           type: string
-        kmsKeyId:
-          description: The ID of the AWS Key Management Service (KMS) key to use to encrypt your project data.
-          type: string
-        projectName:
-          description: The name of the project.
-          type: string
-        tags:
-          description: Resource tags to add to the project.
-          type: object
-      required:
-      - projectName
       type: object
   securitySchemes:
     awsSigV4:
