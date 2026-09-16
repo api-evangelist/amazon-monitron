@@ -1,8 +1,8 @@
 aid: amazon-monitron
 name: Amazon Monitron
-description: Amazon Monitron is an end-to-end system that uses machine learning to detect abnormal behavior in industrial
-  machinery. It includes sensors, a gateway, and the Monitron mobile app to enable predictive maintenance and reduce unplanned
-  downtime.
+description: Amazon Monitron is an end-to-end system that uses machine learning to detect abnormal behavior
+  in industrial machinery. It includes sensors, a gateway, and the Monitron mobile app to enable predictive
+  maintenance and reduce unplanned downtime.
 type: Index
 deliveryModel:
   model: saas
@@ -38,7 +38,7 @@ tags:
 - Media
 url: https://raw.githubusercontent.com/api-evangelist/amazon-monitron/refs/heads/main/apis.yml
 created: '2026-03-16'
-modified: '2026-05-19'
+modified: '2026-09-16'
 specificationVersion: '0.23'
 apis:
 - aid: amazon-monitron:amazon-monitron-projectadmins-api
@@ -98,6 +98,8 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/monitron/faqs/
 common:
+- type: Website
+  url: https://amazon.com
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/amazon-monitron/overview
 - type: AgenticAccess
@@ -139,7 +141,8 @@ common:
 - type: Features
   data:
   - name: ML-Based Anomaly Detection
-    description: Machine learning models trained on industrial machinery data to detect abnormal behavior automatically.
+    description: Machine learning models trained on industrial machinery data to detect abnormal behavior
+      automatically.
   - name: Project Management
     description: Organize machine monitoring deployments into projects with access control.
   - name: End-to-End System
