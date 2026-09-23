@@ -1,7 +1,7 @@
 openapi: 3.2.0
 info:
   description: Amazon Monitron is an end-to-end system that uses machine learning to detect abnormal behavior in industrial machinery, enabling predictive maintenance.
-  title: Amazon Monitron ProjectAdmins Tags API
+  title: Amazon Monitron Tags API
   version: '2020-10-01'
   x-generated-from: documentation
   x-last-validated: '2026-04-19'

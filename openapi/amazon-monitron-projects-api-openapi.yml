@@ -1,7 +1,7 @@
 openapi: 3.2.0
 info:
   description: Amazon Monitron is an end-to-end system that uses machine learning to detect abnormal behavior in industrial machinery, enabling predictive maintenance.
-  title: Amazon Monitron ProjectAdmins Projects API
+  title: Amazon Monitron Projects API
   version: '2020-10-01'
   x-generated-from: documentation
   x-last-validated: '2026-04-19'
@@ -210,6 +210,17 @@ components:
       required:
       - projectName
       type: object
+    ListProjectsResponse:
+      properties:
+        items:
+          description: A list of Monitron projects.
+          items:
+            $ref: '#/components/schemas/Project'
+          type: array
+        nextToken:
+          description: A pagination token to retrieve the next set of results.
+          type: string
+      type: object
     Project:
       description: Represents a Monitron project.
       properties:
@@ -232,17 +243,6 @@ components:
         updatedAt:
           description: The time at which the project was last updated.
           format: date-time
-          type: string
-      type: object
-    ListProjectsResponse:
-      properties:
-        items:
-          description: A list of Monitron projects.
-          items:
-            $ref: '#/components/schemas/Project'
-          type: array
-        nextToken:
-          description: A pagination token to retrieve the next set of results.
           type: string
       type: object
   securitySchemes:

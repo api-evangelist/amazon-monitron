@@ -1,9 +1,7 @@
 {
   "provider": "amazon-monitron",
   "sources": [
-    "amazon-monitron-projectadmins-api-openapi.yml",
-    "amazon-monitron-projects-api-openapi.yml",
-    "amazon-monitron-tags-api-openapi.yml"
+    "_ae-authored/amazon-monitron-openapi-original.yml"
   ],
   "outputs": [
     "amazon-monitron-projectadmins-api-openapi.yml",
@@ -14,7 +12,16 @@
   "errors": [],
   "warnings": [],
   "notes": [
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "amazon-monitron-openapi-original.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "amazon-monitron-openapi-original.yml: declared missing tag: ProjectAdmins",
+    "amazon-monitron-openapi-original.yml: declared missing tag: Projects",
+    "amazon-monitron-openapi-original.yml: declared missing tag: Tags",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "amazon-monitron-projectadmins-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-monitron-projects-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-monitron-tags-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
