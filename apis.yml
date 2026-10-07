@@ -105,6 +105,8 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/monitron/faqs/
 common:
+- type: Plans
+  url: plans/amazon-monitron-plans-pricing.yml
 - type: Website
   url: https://aws.amazon.com/monitron/
 - type: PostmanWorkspace
