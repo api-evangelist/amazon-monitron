@@ -60,3 +60,58 @@ plans:
   included_quota: US East (N. Virginia) Region rate; charged from commissioning
 rate_limit_statements:
 - Up to 20 Amazon Monitron Sensors can be connected at a time with one Amazon Monitron Gateway.
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - subscription
+  units: []
+  plans:
+  - name: Amazon Monitron Starter Kit (5 Sensors (TE1A001), 1 Gateway)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - one-time
+  - name: Pack of 5 Amazon Monitron Sensors (TE1A001)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - one-time
+  - name: Pack of 5 Ex-rated Amazon Monitron Sensors (TE1A195)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - one-time
+  - name: Amazon Monitron Gateway (Wi-Fi)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - one-time
+  - name: Amazon Monitron Gateway (Ethernet)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - one-time
+  - name: Amazon Monitron Service
+    access: other
+    model: unstated
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
