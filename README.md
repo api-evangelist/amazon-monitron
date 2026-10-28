@@ -1,4 +1,4 @@
-# Amazon Monitron (amazon-monitron)
+# Amazon Monitron
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,128 +66,177 @@
 
 Amazon Monitron is an end-to-end system that uses machine learning to detect abnormal behavior in industrial machinery. It includes sensors, a gateway, and the Monitron mobile app to enable predictive maintenance and reduce unplanned downtime.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/amazon-monitron/refs/heads/main/apis.yml)
+**Areas:** AWS · Industrial IoT · Predictive Maintenance · Monitoring · Machine Learning
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Amazon Monitron on APIs.io
 
-## Tags:
+Everything profiled for Amazon Monitron is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/amazon-monitron/](https://apis.io/providers/amazon-monitron/)** — or go straight to one of the APIs or properties below.
 
- - AWS, Broadcasting, Media Processing, Media
+### APIs (3)
 
-## Timestamps
+- [Amazon Monitron ProjectAdmins API](https://apis.io/apis/amazon-monitron/amazon-monitron-projectadmins-api/) — The ProjectAdmins API from Amazon Monitron — 2 operation(s) for projectadmins.
+- [Amazon Monitron Projects API](https://apis.io/apis/amazon-monitron/amazon-monitron-projects-api/) — The Projects API from Amazon Monitron — 2 operation(s) for projects.
+- [Amazon Monitron Tags API](https://apis.io/apis/amazon-monitron/amazon-monitron-tags-api/) — The Tags API from Amazon Monitron — 1 operation(s) for tags.
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Amazon Monitron API
-Amazon Monitron is an end-to-end system that uses machine learning to detect abnormal behavior in industrial machinery. It includes sensors, a gateway, and the Monitron mobile app to enable predictive maintenance and reduce unplanned downtime.
+#### Agentic access (1)
 
-**Human URL:** [https://aws.amazon.com/monitron/](https://aws.amazon.com/monitron/)
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags:
+- [Amazon Monitron Agentic Access](https://apis.io/agentic-access/amazon-monitron/amazon-monitron-agentic-access/)
 
- - Broadcasting, Media Processing, Media
+#### JSON Schema (4)
 
-#### Properties
+The data models the API reads and writes.
 
+- [CreateProjectRequest](https://apis.io/schemas/amazon-monitron/monitron-api-create-project-request/)
+- [ListProjectsResponse](https://apis.io/schemas/amazon-monitron/monitron-api-list-projects-response/)
+- [Project](https://apis.io/schemas/amazon-monitron/monitron-api-project/)
+- [Tag](https://apis.io/schemas/amazon-monitron/monitron-api-tag/)
+
+#### JSON Structure (4)
+
+Data models expressed in JSON Structure.
+
+- [Monitron Api Create Project Request Structure](https://apis.io/json-structure/amazon-monitron/monitron-api-create-project-request-structure/)
+- [Monitron Api List Projects Response Structure](https://apis.io/json-structure/amazon-monitron/monitron-api-list-projects-response-structure/)
+- [Monitron Api Project Structure](https://apis.io/json-structure/amazon-monitron/monitron-api-project-structure/)
+- [Monitron Api Tag Structure](https://apis.io/json-structure/amazon-monitron/monitron-api-tag-structure/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Amazon Monitron Monitron Api Context](https://apis.io/jsonld/amazon-monitron/amazon-monitron-monitron-api-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Amazon Monitron Vocabulary](https://apis.io/vocabularies/amazon-monitron/amazon-monitron-vocabulary/)
+
+#### Examples (4)
+
+Example requests and responses.
+
+- [Monitron Api Create Project Request Example](https://apis.io/examples/amazon-monitron/monitron-api-create-project-request-example/)
+- [Monitron Api List Projects Response Example](https://apis.io/examples/amazon-monitron/monitron-api-list-projects-response-example/)
+- [Monitron Api Project Example](https://apis.io/examples/amazon-monitron/monitron-api-project-example/)
+- [Monitron Api Tag Example](https://apis.io/examples/amazon-monitron/monitron-api-tag-example/)
+
+#### Collections (6)
+
+Postman and Open Collection request collections.
+
+- [Amazon Monitron ProjectAdmins API](https://apis.io/collections/amazon-monitron/open-amazon-monitron-projectadmins-api/)
+- [Amazon Monitron ProjectAdmins Projects API](https://apis.io/collections/amazon-monitron/open-amazon-monitron-projects-api/)
+- [Amazon Monitron ProjectAdmins Tags API](https://apis.io/collections/amazon-monitron/open-amazon-monitron-tags-api/)
+- [Amazon Monitron ProjectAdmins API](https://apis.io/collections/amazon-monitron/postman-amazon-monitron-projectadmins-api/)
+- [Amazon Monitron ProjectAdmins Projects API](https://apis.io/collections/amazon-monitron/postman-amazon-monitron-projects-api/)
+- [Amazon Monitron ProjectAdmins Tags API](https://apis.io/collections/amazon-monitron/postman-amazon-monitron-tags-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Amazon Monitron — jsonschema rules](https://apis.io/rules/amazon-monitron/amazon-monitron-jsonschema-spectral-rules/)
+- [Amazon Monitron API Rules](https://apis.io/rules/amazon-monitron/amazon-monitron-spectral-rules/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Amazon Monitron Authentication](https://apis.io/security/amazon-monitron/amazon-monitron-authentication/)
+- [Amazon Monitron Domain Security](https://apis.io/security/amazon-monitron/amazon-monitron-domain-security/)
+- [Amazon Monitron Trust Center](https://apis.io/security/amazon-monitron/amazon-monitron-trust-center/)
+- [Amazon Monitron Vulnerability Disclosure](https://apis.io/security/amazon-monitron/amazon-monitron-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Amazon Monitron Plans Pricing](https://apis.io/plans/amazon-monitron/amazon-monitron-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Amazon Monitron Rate Limits](https://apis.io/rate-limits/amazon-monitron/amazon-monitron-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Amazon Monitron Finops](https://apis.io/finops/amazon-monitron/amazon-monitron-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://aws.amazon.com/monitron/)
 - [Documentation](https://docs.aws.amazon.com/monitron/)
-- [OpenAPI](openapi/amazon-monitron-openapi-original.yml)
-- [GettingStarted](https://aws.amazon.com/monitron/getting-started/)
 - [Pricing](https://aws.amazon.com/monitron/pricing/)
-- [FAQ](https://aws.amazon.com/monitron/faqs/)
-
-## Common Properties
-
-- [Portal](https://aws.amazon.com/monitron/)
-- [Documentation](https://docs.aws.amazon.com/monitron/)
-- [TermsOfService](https://aws.amazon.com/service-terms/)
-- [PrivacyPolicy](https://aws.amazon.com/privacy/)
 - [Support](https://aws.amazon.com/premiumsupport/)
 - [Blog](https://aws.amazon.com/blogs/media/)
-- [GitHubOrganization](https://github.com/aws)
-- [Console](https://console.aws.amazon.com/monitron/)
-- [SignUp](https://portal.aws.amazon.com/billing/signup)
-- [StatusPage](https://health.aws.amazon.com/health/status)
-- [Contact](https://aws.amazon.com/contact-us/)
+- [Terms of service](https://aws.amazon.com/service-terms/)
+- [Privacy policy](https://aws.amazon.com/privacy/)
+- [GitHub](https://github.com/aws)
+- [Status](https://health.aws.amazon.com/health/status)
 
-## Features
+## API Evangelist rating
 
-| Name | Description |
-|------|-------------|
-| ML-Based Anomaly Detection | Machine learning models trained on industrial machinery data to detect abnormal behavior automatically. |
-| Project Management | Organize machine monitoring deployments into projects with access control. |
-| End-to-End System | Integrated hardware sensors, gateway, cloud processing, and mobile app in one solution. |
-| Predictive Maintenance | Identify potential equipment failures before they occur to schedule proactive maintenance. |
-| User Access Control | Manage project administrators and user associations with fine-grained permissions. |
+**Kin Score 48.9** — developing · rubric 0.25.0 · scored 2026-10-23
 
-## Use Cases
+| Facet | Score |
+|---|---|
+| Discoverability | 62.5 |
+| Contract quality | 24.3 |
+| Contract governance | 27.3 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 48.8 |
+| Access clarity | 84.2 |
 
-| Name | Description |
-|------|-------------|
-| Industrial Equipment Monitoring | Monitor motors, pumps, fans, and compressors for early signs of failure. |
-| Predictive Maintenance Programs | Build data-driven maintenance schedules based on actual equipment health. |
-| Downtime Reduction | Reduce unplanned production downtime by catching issues before equipment fails. |
-| Plant-Wide Monitoring | Deploy sensors across entire manufacturing facilities for comprehensive asset health. |
+**Agent readiness 30.9** — agent-ready
 
-## Integrations
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | verified |
+| Error Semantics | — |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | paginated |
+| Operation Distinctiveness | distinct |
 
-| Name | Description |
-|------|-------------|
-| AWS IoT Core | Monitron gateway connects to the cloud via AWS IoT Core. |
-| Amazon Kinesis | Stream Monitron measurement data to Kinesis for real-time analytics. |
-| Amazon S3 | Export historical sensor data to S3 for long-term analysis. |
-| AWS IAM | Control API access and project permissions with IAM policies. |
+**Regulatory alignment 32.7** — Horizontal (data, software, accessibility, platform)
 
-## Artifacts
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/amazon-monitron/](https://apis.io/providers/amazon-monitron/).
 
-Machine-readable API specifications organized by format.
+## How this profile is made
 
-### OpenAPI
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-- [Amazon Monitron OpenAPI](openapi/amazon-monitron-openapi-original.yml)
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Amazon Monitron: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-### JSON Schema
+## Open an issue
 
-- 4 schema files in [json-schema/](json-schema/)
-
-### JSON Structure
-
-- 4 structure files in [json-structure/](json-structure/)
-
-### JSON-LD
-
-- [Amazon Monitron API Context](json-ld/amazon-monitron-monitron-api-context.jsonld)
-
-### Examples
-
-- 4 example files in [examples/](examples/)
-
-## Capabilities
-
-Naftiko capabilities organized as shared per-API definitions composed into customer-facing workflows.
-
-### Shared Per-API Definitions
-
-- [Amazon Monitron](capabilities/shared/monitron.yaml) — 12 operations for media processing
-
-### Workflow Capabilities
-
-| Workflow | APIs Combined | Tools | Persona |
-|----------|--------------|-------|---------|
-| [Amazon Monitron Workflow](capabilities/amazon-monitron-media-workflow.yaml) | Amazon Monitron | 8 | Broadcast Engineer |
-
-## Vocabulary
-
-- [Amazon Monitron Vocabulary](vocabulary/amazon-monitron-vocabulary.yaml) — Unified taxonomy mapping resources, actions, workflows, and personas across operational (OpenAPI) and capability (Naftiko) dimensions
-
-## Rules
-
-- [Amazon Monitron Spectral Rules](rules/amazon-monitron-spectral-rules.yml) — 20 rules across 8 categories enforcing Amazon Monitron API conventions
-
-## Maintainers
-
-**FN:** Kin Lane
-
-**Email:** kin@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/amazon-monitron/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
