@@ -61,7 +61,7 @@ plans:
 rate_limit_statements:
 - Up to 20 Amazon Monitron Sensors can be connected at a time with one Amazon Monitron Gateway.
 x-canonical:
-  generated: '2026-11-01'
+  generated: '2026-11-02'
   vocabulary: engine/economics/plans-canonical.yml
   models:
   - subscription
