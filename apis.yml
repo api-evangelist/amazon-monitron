@@ -1,0 +1,193 @@
+aid: amazon-monitron
+name: Amazon Monitron
+description: Amazon Monitron is an end-to-end system that uses machine learning to detect abnormal behavior
+  in industrial machinery. It includes sensors, a gateway, and the Monitron mobile app to enable predictive
+  maintenance and reduce unplanned downtime.
+type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: medium
+  source:
+  - plans
+  - authentication
+  - security
+  generated: '2026-09-03'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amazon-monitron.png
+tags:
+- Amazon Web Services
+- Industrial IoT
+- Predictive Maintenance
+- Monitoring
+- Machine Learning
+tags_raw:
+- AWS
+- Industrial IoT
+- Predictive Maintenance
+- Monitoring
+- Machine-Learning
+url: https://raw.githubusercontent.com/api-evangelist/amazon-monitron/refs/heads/main/apis.yml
+created: '2026-03-16'
+modified: '2026-09-16'
+specificationVersion: '0.23'
+apis:
+- aid: amazon-monitron:amazon-monitron-projectadmins-api
+  name: Amazon Monitron ProjectAdmins API
+  description: The ProjectAdmins API from Amazon Monitron — 2 operation(s) for projectadmins.
+  humanURL: https://aws.amazon.com/monitron/
+  baseURL: https://monitron.us-east-1.amazonaws.com
+  tags:
+  - ProjectAdmins
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-monitron-projectadmins-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/monitron/
+  - type: GettingStarted
+    url: https://aws.amazon.com/monitron/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/monitron/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/monitron/faqs/
+- aid: amazon-monitron:amazon-monitron-projects-api
+  name: Amazon Monitron Projects API
+  description: The Projects API from Amazon Monitron — 2 operation(s) for projects.
+  humanURL: https://aws.amazon.com/monitron/
+  baseURL: https://monitron.us-east-1.amazonaws.com
+  tags:
+  - Project
+  tags_raw:
+  - Projects
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-monitron-projects-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/monitron/
+  - type: GettingStarted
+    url: https://aws.amazon.com/monitron/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/monitron/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/monitron/faqs/
+- aid: amazon-monitron:amazon-monitron-tags-api
+  name: Amazon Monitron Tags API
+  description: The Tags API from Amazon Monitron — 1 operation(s) for tags.
+  humanURL: https://aws.amazon.com/monitron/
+  baseURL: https://monitron.us-east-1.amazonaws.com
+  tags:
+  - Tags
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-monitron-tags-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/monitron/
+  - type: GettingStarted
+    url: https://aws.amazon.com/monitron/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/monitron/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/monitron/faqs/
+common:
+- type: Pricing
+  url: https://aws.amazon.com/monitron/pricing/
+- type: RateLimits
+  url: rate-limits/amazon-monitron-rate-limits.yml
+- type: FinOps
+  url: finops/amazon-monitron-finops.yml
+- type: Plans
+  url: plans/amazon-monitron-plans-pricing.yml
+- type: Website
+  url: https://aws.amazon.com/monitron/
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/amazon-monitron/overview
+- type: AgenticAccess
+  url: agentic-access/amazon-monitron-agentic-access.yml
+- type: TrustCenter
+  url: security/amazon-monitron-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/amazon-monitron-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/amazon-monitron-domain-security.yml
+- type: Authentication
+  url: authentication/amazon-monitron-authentication.yml
+- type: Portal
+  url: https://aws.amazon.com/monitron/
+- type: Documentation
+  url: https://docs.aws.amazon.com/monitron/
+- type: TermsOfService
+  url: https://aws.amazon.com/service-terms/
+- type: PrivacyPolicy
+  url: https://aws.amazon.com/privacy/
+- type: Support
+  url: https://aws.amazon.com/premiumsupport/
+- type: Blog
+  url: https://aws.amazon.com/blogs/media/
+- type: GitHubOrganization
+  url: https://github.com/aws
+- type: Console
+  url: https://console.aws.amazon.com/monitron/
+- type: Signup
+  url: https://portal.aws.amazon.com/billing/signup
+- type: StatusPage
+  url: https://health.aws.amazon.com/health/status
+- type: Contact
+  url: https://aws.amazon.com/contact-us/
+- type: SpectralRules
+  url: rules/amazon-monitron-spectral-rules.yml
+- type: Vocabulary
+  url: vocabulary/amazon-monitron-vocabulary.yaml
+- type: Features
+  data:
+  - name: ML-Based Anomaly Detection
+    description: Machine learning models trained on industrial machinery data to detect abnormal behavior
+      automatically.
+  - name: Project Management
+    description: Organize machine monitoring deployments into projects with access control.
+  - name: End-to-End System
+    description: Integrated hardware sensors, gateway, cloud processing, and mobile app in one solution.
+  - name: Predictive Maintenance
+    description: Identify potential equipment failures before they occur to schedule proactive maintenance.
+  - name: User Access Control
+    description: Manage project administrators and user associations with fine-grained permissions.
+- type: UseCases
+  data:
+  - name: Industrial Equipment Monitoring
+    description: Monitor motors, pumps, fans, and compressors for early signs of failure.
+  - name: Predictive Maintenance Programs
+    description: Build data-driven maintenance schedules based on actual equipment health.
+  - name: Downtime Reduction
+    description: Reduce unplanned production downtime by catching issues before equipment fails.
+  - name: Plant-Wide Monitoring
+    description: Deploy sensors across entire manufacturing facilities for comprehensive asset health.
+- type: Integrations
+  data:
+  - name: AWS IoT Core
+    description: Monitron gateway connects to the cloud via AWS IoT Core.
+  - name: Amazon Kinesis
+    description: Stream Monitron measurement data to Kinesis for real-time analytics.
+  - name: Amazon S3
+    description: Export historical sensor data to S3 for long-term analysis.
+  - name: AWS IAM
+    description: Control API access and project permissions with IAM policies.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
+x-parent: amazon-web-services
+x-relationship: product
