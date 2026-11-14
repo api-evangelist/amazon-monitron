@@ -5,9 +5,18 @@ artifacts:
   agentic-access/amazon-monitron-agentic-access.yml:
     method: generated
     evidence: declared in the artifact
+  ai-preferences/amazon-monitron-ai-preferences.yml:
+    method: harvested
+    evidence: declared in the artifact
   authentication/amazon-monitron-authentication.yml:
     method: derived
     evidence: declared in the artifact
+  certification/observations-2026-11-11.jsonl:
+    method: unknown
+    evidence: no authorship recorded
+  certification/status.yml:
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-monitron-projectadmins-api.opencollection.json:
     method: derived
     evidence: openapi/amazon-monitron-projectadmins-api
@@ -26,6 +35,15 @@ artifacts:
   collections/amazon-monitron-tags-api.postman_collection.json:
     method: derived
     evidence: openapi/amazon-monitron-tags-api
+  conformance/amazon-monitron-conformance.yml:
+    method: derived
+    evidence: declared in the artifact
+  data-model/amazon-monitron-data-model.yml:
+    method: derived
+    evidence: declared in the artifact
+  errors/amazon-monitron-problem-types.yml:
+    method: derived
+    evidence: declared in the artifact
   examples/monitron-api-create-project-request-example.json:
     method: unknown
     evidence: no authorship recorded
@@ -44,13 +62,28 @@ artifacts:
   front-door-ai/2026-09-17.yml:
     method: unknown
     evidence: no authorship recorded
+  hosts/amazon-monitron-hosts.yml:
+    method: derived
+    evidence: declared in the artifact
   integrations/_index.yml:
     method: generated
     evidence: carries an API Evangelist house phrase
   integrations/amazon-monitron-integration-edges.yml:
     method: unknown
     evidence: no authorship recorded
+  json-ld/amazon-monitron-context.jsonld:
+    method: unknown
+    evidence: no authorship recorded
   json-ld/amazon-monitron-monitron-api-context.jsonld:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-monitron-create-project-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-monitron-list-projects-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-monitron-project-schema.json:
     method: unknown
     evidence: no authorship recorded
   json-schema/monitron-api-create-project-request-schema.json:
@@ -80,7 +113,7 @@ artifacts:
   kin/checks-2026-10-23T222754.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
-  kin/checks-2026-11-02T082323.yml:
+  kin/checks-2026-11-06T143934.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-23T000603.yml:
@@ -149,6 +182,21 @@ artifacts:
   kin/score-2026-11-02T082323.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-11-06T143934.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  lifecycle/amazon-monitron-lifecycle.yml:
+    method: searched
+    evidence: declared in the artifact
+  llms/amazon-monitron-llms-provenance.yml:
+    method: unknown
+    evidence: no authorship recorded
+  llms/amazon-monitron-llms.txt:
+    method: unknown
+    evidence: no authorship recorded
+  mcp/amazon-monitron-mcp.yml:
+    method: derived
+    evidence: declared in the artifact
   openapi/amazon-monitron-projectadmins-api-openapi.yml:
     method: unknown
     evidence: no authorship recorded
@@ -158,6 +206,9 @@ artifacts:
   openapi/amazon-monitron-tags-api-openapi.yml:
     method: unknown
     evidence: no authorship recorded
+  patterns/amazon-monitron-patterns.yml:
+    method: derived
+    evidence: declared in the artifact
   plans/amazon-monitron-plans-pricing.yml:
     method: searched
     evidence: declared in the artifact
@@ -170,10 +221,16 @@ artifacts:
   postman/amazon-monitron-tags-api.postman_collection.json:
     method: derived
     evidence: openapi/amazon-monitron-tags-api
+  privacy/amazon-monitron-privacy-policy.yml:
+    method: harvested
+    evidence: declared in the artifact
   rate-limits/amazon-monitron-rate-limits.yml:
     method: generated
     evidence: declared in the artifact
   rules/amazon-monitron-jsonschema-spectral-rules.yml:
+    method: generated
+    evidence: declared in the artifact
+  rules/amazon-monitron-rules.yml:
     method: generated
     evidence: declared in the artifact
   rules/amazon-monitron-spectral-rules.yml:
@@ -191,6 +248,24 @@ artifacts:
   sla/amazon-monitron-sla.yml:
     method: generated
     evidence: declared in the artifact
+  terms/amazon-monitron-terms-of-service.yml:
+    method: harvested
+    evidence: declared in the artifact
+  vendors/amazon-monitron-vendors.yml:
+    method: unknown
+    evidence: no authorship recorded
   vocabulary/amazon-monitron-vocabulary.yaml:
+    method: unknown
+    evidence: no authorship recorded
+  vocabulary/amazon-monitron-vocabulary.yml:
+    method: derived
+    evidence: declared in the artifact
+  well-known/amazon-monitron-midway-auth-openid-configuration.json:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/amazon-monitron-security.txt:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/amazon-monitron-well-known.yml:
     method: unknown
     evidence: no authorship recorded

@@ -1,9 +1,12 @@
 aid: amazon-monitron
+
 name: Amazon Monitron
-description: Amazon Monitron is an end-to-end system that uses machine learning to detect abnormal behavior
-  in industrial machinery. It includes sensors, a gateway, and the Monitron mobile app to enable predictive
-  maintenance and reduce unplanned downtime.
+
+description: Amazon Monitron is an end-to-end system that uses machine learning to detect abnormal behavior in industrial machinery. It includes
+  sensors, a gateway, and the Monitron mobile app to enable predictive maintenance and reduce unplanned downtime.
+
 type: Index
+
 deliveryModel:
   model: saas
   open_source: false
@@ -16,6 +19,7 @@ deliveryModel:
   - pricing
   generated: '2026-08-28'
   method: derived
+
 accessModel:
   pricing: paid
   onboarding: unknown
@@ -28,9 +32,10 @@ accessModel:
   - plans
   - authentication
   - security
-  generated: '2026-11-06'
+  generated: '2026-11-13'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amazon-monitron.png
+
 tags:
 - Amazon Web Services
 - Industrial IoT
@@ -42,69 +47,70 @@ tags_raw:
 - Industrial IoT
 - Predictive Maintenance
 - Monitoring
+- Machine Learning
+
+tags_raw:
+- AWS
+- Industrial IoT
+- Predictive Maintenance
+- Monitoring
 - Machine-Learning
+
 url: https://raw.githubusercontent.com/api-evangelist/amazon-monitron/refs/heads/main/apis.yml
+
 created: '2026-03-16'
+
 modified: '2026-09-16'
+
 specificationVersion: '0.23'
-apis:
-- aid: amazon-monitron:amazon-monitron-projectadmins-api
-  name: Amazon Monitron ProjectAdmins API
-  description: The ProjectAdmins API from Amazon Monitron — 2 operation(s) for projectadmins.
-  humanURL: https://aws.amazon.com/monitron/
-  baseURL: https://monitron.us-east-1.amazonaws.com
-  tags:
-  - ProjectAdmins
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-monitron-projectadmins-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/monitron/
-  - type: GettingStarted
-    url: https://aws.amazon.com/monitron/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/monitron/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/monitron/faqs/
-- aid: amazon-monitron:amazon-monitron-projects-api
-  name: Amazon Monitron Projects API
-  description: The Projects API from Amazon Monitron — 2 operation(s) for projects.
-  humanURL: https://aws.amazon.com/monitron/
-  baseURL: https://monitron.us-east-1.amazonaws.com
-  tags:
-  - Project
-  tags_raw:
-  - Projects
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-monitron-projects-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/monitron/
-  - type: GettingStarted
-    url: https://aws.amazon.com/monitron/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/monitron/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/monitron/faqs/
-- aid: amazon-monitron:amazon-monitron-tags-api
-  name: Amazon Monitron Tags API
-  description: The Tags API from Amazon Monitron — 1 operation(s) for tags.
-  humanURL: https://aws.amazon.com/monitron/
-  baseURL: https://monitron.us-east-1.amazonaws.com
-  tags:
-  - Tags
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-monitron-tags-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/monitron/
-  - type: GettingStarted
-    url: https://aws.amazon.com/monitron/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/monitron/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/monitron/faqs/
+
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
+
 common:
+- type: Spectral
+  url: rules/amazon-monitron-spectral-rules.yml
+- type: Spectral
+  url: rules/amazon-monitron-rules.yml
+- type: Spectral
+  url: rules/amazon-monitron-jsonschema-spectral-rules.yml
+- type: JSONLD
+  url: json-ld/amazon-monitron-monitron-api-context.jsonld
+- type: JSONLD
+  url: json-ld/amazon-monitron-context.jsonld
+- type: Vocabulary
+  url: vocabulary/amazon-monitron-vocabulary.yml
+- type: DataModel
+  url: data-model/amazon-monitron-data-model.yml
+- type: Compliance
+  url: https://aws.amazon.com/compliance/
+- type: Deprecation
+  url: lifecycle/amazon-monitron-lifecycle.yml
+- type: Lifecycle
+  url: lifecycle/amazon-monitron-lifecycle.yml
+- type: ErrorCatalog
+  url: errors/amazon-monitron-problem-types.yml
+- type: Conformance
+  url: conformance/amazon-monitron-conformance.yml
+- type: LLMsTxt
+  url: llms/amazon-monitron-llms.txt
+- type: SecurityTxt
+  url: well-known/amazon-monitron-security.txt
+- type: WellKnown
+  url: well-known/amazon-monitron-well-known.yml
+- type: Hosts
+  url: hosts/amazon-monitron-hosts.yml
+- type: Vendors
+  url: vendors/amazon-monitron-vendors.yml
+- type: SignUp
+  url: https://signin.aws.amazon.com/signup?request_type=builderId
+- type: Security
+  url: https://aws.amazon.com/security/?nc2=h_dsc_aa_sec
+- type: Newsroom
+  url: https://aws.amazon.com/media/?nc2=h_sol_ind_med
+- type: GettingStarted
+  url: https://developer.amazon.com/frustration-free-setup
 - type: Pricing
   url: https://aws.amazon.com/monitron/pricing/
 - type: RateLimits
@@ -156,8 +162,7 @@ common:
 - type: Features
   data:
   - name: ML-Based Anomaly Detection
-    description: Machine learning models trained on industrial machinery data to detect abnormal behavior
-      automatically.
+    description: Machine learning models trained on industrial machinery data to detect abnormal behavior automatically.
   - name: Project Management
     description: Organize machine monitoring deployments into projects with access control.
   - name: End-to-End System
@@ -186,8 +191,82 @@ common:
     description: Export historical sensor data to S3 for long-term analysis.
   - name: AWS IAM
     description: Control API access and project permissions with IAM policies.
-maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+- type: UsageTerms
+  url: terms/amazon-monitron-terms-of-service.yml
+- type: DataProcessing
+  url: privacy/amazon-monitron-privacy-policy.yml
+- type: AIPreferences
+  url: ai-preferences/amazon-monitron-ai-preferences.yml
+
+apis:
+- aid: amazon-monitron:amazon-monitron-projectadmins-api
+  name: Amazon Monitron ProjectAdmins API
+  description: The ProjectAdmins API from Amazon Monitron — 2 operation(s) for projectadmins.
+  humanURL: https://aws.amazon.com/monitron/
+  baseURL: https://monitron.us-east-1.amazonaws.com
+  tags:
+  - ProjectAdmins
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-monitron-projectadmins-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/monitron/
+  - type: GettingStarted
+    url: https://aws.amazon.com/monitron/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/monitron/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/monitron/faqs/
+- aid: amazon-monitron:amazon-monitron-projects-api
+  name: Amazon Monitron Projects API
+  description: The Projects API from Amazon Monitron — 2 operation(s) for projects.
+  humanURL: https://aws.amazon.com/monitron/
+  baseURL: https://monitron.us-east-1.amazonaws.com
+  tags:
+  - Project
+  tags_raw:
+  - Projects
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-monitron-projects-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/monitron/
+  - type: GettingStarted
+    url: https://aws.amazon.com/monitron/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/monitron/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/monitron/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-monitron-project-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-monitron-create-project-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-monitron-list-projects-response-schema.json
+- aid: amazon-monitron:amazon-monitron-tags-api
+  name: Amazon Monitron Tags API
+  description: The Tags API from Amazon Monitron — 1 operation(s) for tags.
+  humanURL: https://aws.amazon.com/monitron/
+  baseURL: https://monitron.us-east-1.amazonaws.com
+  tags:
+  - Tags
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-monitron-tags-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/monitron/
+  - type: GettingStarted
+    url: https://aws.amazon.com/monitron/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/monitron/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/monitron/faqs/
+
 x-parent: amazon-web-services
+
 x-relationship: product
+x-enrichment:
+  date: '2026-11-11'
+  status: enriched
+  artifacts_added: 20
+  pass: local-v6
